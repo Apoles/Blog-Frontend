@@ -7,3 +7,9 @@
 .iconDiv a {
   padding: 10px;
 }
+
+@media only screen and (max-width: 1210px) {
+  .navbarsDiv {
+    width: 100%;
+  }
+}

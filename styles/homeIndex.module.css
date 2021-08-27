@@ -1,7 +1,6 @@
 .homeMainDiv {
   margin: auto;
   width: 1220px;
-  background-color: white;
 }
 
 .indexRow {
@@ -22,4 +21,14 @@
   align-items: center;
   width: 350px;
   padding-right: 24px;
+}
+
+@media only screen and (max-width: 1210px) {
+  .homeMainDiv {
+    margin: auto;
+    width: 820px;
+  }
+  .hakkimizda {
+    display: none;
+  }
 }
