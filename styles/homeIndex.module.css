@@ -1,0 +1,25 @@
+.homeMainDiv {
+  margin: auto;
+  width: 1220px;
+  background-color: white;
+}
+
+.indexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.indexRow hr {
+  border-top: 1px solid blue;
+}
+
+.hakkimizda {
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  padding-right: 24px;
+}

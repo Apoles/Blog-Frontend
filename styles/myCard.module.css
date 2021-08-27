@@ -1,0 +1,24 @@
+.mainMyCardDiv {
+  width: 780px;
+  height: 307px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 25px;
+  overflow: hidden;
+}
+.mainMyCardDiv img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  margin-right: 25px;
+  overflow: auto;
+}
+.zz a {
+  padding: 7px;
+}
+.cardCol {
+  width: 550px;
+  margin-left: 25px;
+}
