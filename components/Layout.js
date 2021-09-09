@@ -9,6 +9,11 @@ const Layout = ({ children }) => {
         <Navbars></Navbars>
 
         <main>{children}</main>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     </>
   );

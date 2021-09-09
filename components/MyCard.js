@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/myCard.module.css";
-import { Card, Button } from "react-bootstrap";
-import { Divider } from "semantic-ui-react";
-import Link from "next/link";
-import Image from "next/image";
 
-import { FaTwitter, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { Divider } from "semantic-ui-react";
+
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { faHeart } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
+
+import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export const MyCard = (params) => {
-  console.log(params);
   return (
     <div className={styles.mainMyCardDiv}>
       <div className={styles.imageDiv}>
@@ -21,23 +27,40 @@ export const MyCard = (params) => {
         <p>{params.time}</p>
         <p>{params.content}</p> <br></br>
         <Divider className={styles.zz} horizontal>
-          <Link href="/about">
-            <a>
+          <ul>
+            <li>
+              <div>
+                {" "}
+                <FontAwesomeIcon
+                  color="red"
+                  style={{ marginRight: "4px" }}
+                  onClick={() => {
+                    console.log("bastın" + params.id);
+
+                    //
+                  }}
+                  icon={faHeart}
+                ></FontAwesomeIcon>
+              </div>
+            </li>
+            <li>
+              <FacebookShareButton url="http://localhost:3000/">
+                <FaFacebook color="blue"></FaFacebook>
+              </FacebookShareButton>
+            </li>
+            <li>
+              <TwitterShareButton url="http://localhost:3000/">
+                <FaTwitter color="turquoise"></FaTwitter>
+              </TwitterShareButton>
+            </li>
+            <li>
               {" "}
-              <FaFacebook></FaFacebook>
-            </a>
-          </Link>
-          <Link href="/about">
-            <a>
-              <FaInstagram></FaInstagram>
-            </a>
-          </Link>
-          <Link href="/about">
-            <a>
-              {" "}
-              <FaTwitter></FaTwitter>
-            </a>
-          </Link>
+              <WhatsappShareButton url="http://localhost:3000/">
+                {" "}
+                <FaWhatsapp color="green"></FaWhatsapp>
+              </WhatsappShareButton>
+            </li>
+          </ul>
         </Divider>
         <br></br>
       </div>

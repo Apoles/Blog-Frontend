@@ -22,3 +22,13 @@
   width: 550px;
   margin-left: 25px;
 }
+
+.cardCol ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cardCol ul li {
+  padding: 5px;
+  list-style: none;
+}

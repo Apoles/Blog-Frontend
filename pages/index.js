@@ -14,6 +14,7 @@ export default function Home() {
         <div>
           <hr></hr>
           <MyCard
+            id={0}
             imgSrc={blogone}
             title="Hayata dair"
             mainTitle="Gündemin içinde olmak"
@@ -23,6 +24,7 @@ export default function Home() {
           <hr></hr>
 
           <MyCard
+            id={1}
             imgSrc={blogone}
             title="Flutter"
             mainTitle="FLutter ile NavigationBar oluşturma"
@@ -31,6 +33,7 @@ export default function Home() {
           ></MyCard>
           <hr></hr>
           <MyCard
+            id={2}
             imgSrc={blogone}
             title=""
             mainTitle="17 yaşındaki kızın ilk öyküsü"
@@ -48,7 +51,7 @@ export default function Home() {
           </Col>
           <p>Aysenur</p>
           <p>
-            Ben çok güzel bi hanfendiyim ayrıca abimde çok zekidir ve
+            Ben cok güzel bi hanfendiyim ayrıca abimde çok zekidir ve
             yakışıklıdır abimi çok severim Ben çok güzel bi hanfendiyim ayrıca
             abimde çok zekidir ve yakışıklıdır abimi çok severim Ben çok güzel
             bi hanfendiyim ayrıca abimde çok zekidir ve yakışıklıdır abimi çok
