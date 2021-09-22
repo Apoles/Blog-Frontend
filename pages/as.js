@@ -5,7 +5,8 @@ import Image from "next/image";
 import Gist from "react-gist";
 import resimTwo from "../public/resimTwo.png";
 
-export default function Home() {
+export default function Home(videos) {
+  console.log(videos);
   return (
     <div className={styles.homePageMainDiv}>
       <div className={styles.denemeContainer}>
@@ -54,3 +55,15 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://api.publicapis.org/entries");
+
+  const videos = await res.json();
+
+  return {
+    props: {
+      videos,
+    },
+  };
+};

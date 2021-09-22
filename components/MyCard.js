@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/myCard.module.css";
 
 import { Divider } from "semantic-ui-react";
-
+import axios from "axios";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faHeart } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
@@ -15,6 +15,7 @@ import {
 import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export const MyCard = (params) => {
+  console.log(params.content.length);
   return (
     <div className={styles.mainMyCardDiv}>
       <div className={styles.imageDiv}>
@@ -25,7 +26,14 @@ export const MyCard = (params) => {
         <p>{params.title}</p>
         <h2>{params.mainTitle}</h2>
         <p>{params.time}</p>
-        <p>{params.content}</p> <br></br>
+
+        {params.content.length <= 300 ? (
+          <p>{params.content}</p>
+        ) : (
+          <p>{params.content.slice(0, 300)} ...</p>
+        )}
+
+        <br></br>
         <Divider className={styles.zz} horizontal>
           <ul>
             <li>

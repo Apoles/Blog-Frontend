@@ -7,7 +7,8 @@ import hakkimda from "../public/hakkımda.jpg";
 import blogone from "../public/blogone.jpg";
 import Image from "next/image";
 
-export default function Home() {
+export default function Home({ videos }) {
+  console.log(videos);
   return (
     <div className={styles.homeMainDiv}>
       <div className={styles.indexRow}>
@@ -16,10 +17,10 @@ export default function Home() {
           <MyCard
             id={0}
             imgSrc={blogone}
-            title="Hayata dair"
-            mainTitle="Gündemin içinde olmak"
-            time="11:12:2020"
-            content="Türkiye gündemi yine bildiniz gibi. Hatta son aylarda bildiğinizden daha da çirkin. Her gün ayrı bir problem, su yüzüne çıkıyor. Doğa ise su yüzünde biriken bu çirkinlikleri müsilaj ile adeta gözümüze sokuyor. Ancak tabii ki görene, köre ne… Gelin beraber…"
+            title={videos[0].title}
+            mainTitle={videos[0].mainTitle}
+            time={videos[0].time}
+            content={videos[0].content}
           ></MyCard>
           <hr></hr>
 
@@ -45,10 +46,10 @@ export default function Home() {
         </div>
         <div className={styles.hakkimizda}>
           <h1>Hakkımda</h1>
+          <div className={styles.hakkimdaImg}>
+            <Image src={hakkimda} alt="Landscape picture" />
+          </div>
 
-          <Col xs={600} md={2422}>
-            <Image src={hakkimda} alt="Landscape picture" roundedCircle fluid />
-          </Col>
           <p>Aysenur</p>
           <p>
             Ben cok güzel bi hanfendiyim ayrıca abimde çok zekidir ve
@@ -62,3 +63,15 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:3000/api/posts");
+
+  const videos = await res.json();
+
+  return {
+    props: {
+      videos,
+    },
+  };
+};

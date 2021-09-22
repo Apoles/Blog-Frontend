@@ -1,6 +1,9 @@
 .homeMainDiv {
   margin: auto;
-  width: 1220px;
+  width: 1280px;
+  background-color: red;
+  overflow: hidden;
+  padding: 16px;
 }
 
 .indexRow {
@@ -12,6 +15,7 @@
 
 .indexRow hr {
   border-top: 1px solid blue;
+  overflow: hidden;
 }
 
 .hakkimizda {
@@ -20,7 +24,12 @@
   flex-direction: column;
   align-items: center;
   width: 350px;
-  padding-right: 24px;
+}
+
+.hakkimdaImg {
+  width: 300px;
+  background-color: red;
+  border-radius: 12px;
 }
 
 @media only screen and (max-width: 1210px) {

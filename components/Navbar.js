@@ -13,6 +13,7 @@ export const Navbars = () => {
       <div className={styles.navbarsDiv}>
         <Image src={navbarImg} alt="domains"></Image>
         <div className={styles.iconDiv}>
+          <br></br>
           <Link href="/">
             <a>
               <FaTwitter size="20"></FaTwitter>
@@ -37,21 +38,8 @@ export const Navbars = () => {
           </Link>
         </div>
       </div>
-      <br></br>
-      <div className={styles.navbarDiv}>
-        {" "}
-        <Navbar fixed="true" bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
-      </div>
-      <br></br>
+
+      <div className={styles.navbarDiv}></div>
       <br></br>
       <br></br>
       <br></br>
