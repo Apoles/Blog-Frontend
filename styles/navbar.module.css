@@ -33,3 +33,14 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 710px) {
+  .navbarsDiv {
+    width: 100%;
+    background-color: red;
+  }
+
+  .navbarsDiv h1 {
+    font-size: 3rem;
+  }
+}

@@ -63,7 +63,7 @@
 @media only screen and (max-width: 1210px) {
   .homeMainDiv {
     margin: auto;
-    width: 820px;
+    width: 100%;
   }
   .hakkimizda {
     display: none;
