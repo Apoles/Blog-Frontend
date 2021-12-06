@@ -6,14 +6,30 @@ import Link from "next/link";
 import Image from "next/image";
 import resimOne from "../public/resimOne.jpg";
 import navbarImg from "../public/navbar.png";
+import { Divider } from "semantic-ui-react";
 
 export const Navbars = () => {
+  const index = 0;
   return (
     <div>
       <div className={styles.navbarsDiv}>
-        <Image src={navbarImg} alt="domains"></Image>
+        <h1>ABDULLAH GÜMÜŞ</h1>
+        <div></div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className={styles.headerbuttons}>
+          <Link href="/#home">
+            <a>Ana Sayfa</a>
+          </Link>
+          <Link href="/hakkimda">
+            <a>Hakkımda</a>
+          </Link>
+          <Link href="iletisim/#iletişim">
+            <a>İletişim</a>
+          </Link>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+
         <div className={styles.iconDiv}>
-          <br></br>
           <Link href="/">
             <a>
               <FaTwitter size="20"></FaTwitter>

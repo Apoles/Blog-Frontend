@@ -23,15 +23,16 @@ export const MyCard = (params) => {
       </div>
 
       <div className={styles.cardCol}>
-        <p>{params.title}</p>
-        <h2>{params.mainTitle}</h2>
-        <p>{params.time}</p>
-
-        {params.content.length <= 300 ? (
-          <p>{params.content}</p>
-        ) : (
-          <p>{params.content.slice(0, 300)} ...</p>
-        )}
+        <a href={`/posts/${params.id}`}>
+          <p>{params.title}</p>
+          <h2>{params.mainTitle}</h2>
+          <p>{params.time}</p>{" "}
+          {params.content.length <= 300 ? (
+            <p>{params.content}</p>
+          ) : (
+            <p>{params.content.slice(0, 300)} ...</p>
+          )}
+        </a>
 
         <br></br>
         <Divider className={styles.zz} horizontal>

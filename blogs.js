@@ -3,12 +3,14 @@ var bisey =
 
 const blogs = [
   {
+    id: "617167de9a168d4dad85586e",
     title: "DEneyrouz daaa",
     mainTitle: "Deneme yazımdır",
     time: "12:12:2000",
     content: bisey,
   },
   {
+    id: "617696412391320c9353b9cb",
     title: "Zeynepden denemeler",
     mainTitle: "Ah istanbulden",
     time: "12:12:2000",

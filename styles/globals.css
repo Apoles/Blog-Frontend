@@ -14,3 +14,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+a {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}

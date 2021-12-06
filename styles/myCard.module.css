@@ -32,3 +32,10 @@
   padding: 5px;
   list-style: none;
 }
+
+.cardCol a {
+  color: rgb(41, 41, 41);
+}
+.cardCol a :hover {
+  color: black;
+}
