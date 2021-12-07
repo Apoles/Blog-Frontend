@@ -12,6 +12,7 @@
   font-size: 3rem;
   margin-top: 150px;
   margin-bottom: 120px;
+  text-align: center;
 }
 .iconDiv a {
   padding: 10px;
@@ -37,10 +38,24 @@
 @media only screen and (max-width: 710px) {
   .navbarsDiv {
     width: 100%;
-    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
   }
 
   .navbarsDiv h1 {
+    text-align: center;
     font-size: 3rem;
+  }
+
+  .navbarsDiv {
+  }
+  .iconDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 }

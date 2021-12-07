@@ -80,14 +80,26 @@
 
 @media only screen and (max-width: 890px) {
   .mainMyCardDiv {
-    background-color: red;
     width: 100%;
-  }
-  .mainMyCardDiv p {
-    font-size: 1.3rem;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .imageDib {
-    width: 200px;
+  .imageDiv {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .mainMyCardDiv {
+    width: 100%;
+  }
+
+  .imageDiv {
+    display: none;
   }
 }

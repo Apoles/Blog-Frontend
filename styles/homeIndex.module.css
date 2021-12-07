@@ -69,3 +69,18 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 910px) {
+  .indexCol {
+    overflow: hidden;
+  }
+  .hakkimizda {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .leftSide {
+    margin: auto;
+  }
+}
