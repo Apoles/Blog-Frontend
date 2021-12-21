@@ -1,18 +1,20 @@
 import axios from "axios";
 import React from "react";
-import styles from "../../styles/homePage.module.css";
+import styles from "../../styles/ids.module.css";
 import Image from "next/image";
 
 import Gist from "react-gist";
 import resimTwo from "../../public/resimTwo.png";
 
 const Posts = ({ post }) => {
+  console.log("===ASDASDASDAS>", post);
+
   return (
     <div>
       <div className={styles.homePageMainDiv}>
         <div className={styles.denemeContainer}>
           <h1>Deneme yazımdır</h1>
-          <p>{post.productDescription}</p>
+          <p>{post[0].title}</p>
           <Image src={resimTwo} alt="Landscape picture"></Image>
           <p>
             One of the indicators that I really deeply encourage you to use is
@@ -41,12 +43,15 @@ export const getServerSideProps = async (context) => {
   /* const res = await axios.get(
     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
   );*/
-  const res = await axios.get("http://localhost:7000/product/find", {
+  const result = await axios.get("http://localhost:5000/blog/", {
     headers: {
       id: context.params.id,
     },
   });
-  const post = await res.data;
+
+  console.log(result);
+  const post = await result.data;
+
   return {
     props: {
       post,

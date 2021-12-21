@@ -1,11 +1,15 @@
+.hbir {
+  font-family: cursive;
+}
+
 .navbarsDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   height: 85vh;
   background-color: white;
-  padding: 16rem;
+  padding: 12rem;
 }
 
 .navbarsDiv h1 {
