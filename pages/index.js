@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { MyCard } from "../components/MyCard";
 import styles from "../styles/homeIndex.module.css";
-import { Col } from "react-bootstrap";
-import { Divider } from "semantic-ui-react";
+
+import Navbars from "../components/Navbar.js";
 import hakkimda from "../public/hakkımda.jpeg";
 import blogone from "../public/blogone.jpg";
 import resim from "../public/resimOne.jpg";
@@ -15,15 +15,18 @@ export default function Home() {
   const [data, setdata] = useState("f");
 
   useEffect(async () => {
-    axios.get("http://localhost:5000/blog").then((e) => {
+    await axios.get("http://localhost:5000/blog").then((e) => {
       setdata(e.data);
       console.log(e.data);
       console.log("========>", data);
     });
   }, []);
 
+  console.log("====>e", data[0].e);
+
   return (
     <div className={styles.homeMainDiv} id="home">
+      <Navbars></Navbars>
       <div className={styles.indexRow}>
         <div className={styles.indexCol}>
           {data === "f" ? (
@@ -45,6 +48,7 @@ export default function Home() {
                     mainTitle={e.mainTitle}
                     time={e.time}
                     content={e.content}
+                    like={e.like}
                   ></MyCard>
                 </div>
               );

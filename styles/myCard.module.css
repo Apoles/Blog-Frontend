@@ -39,6 +39,13 @@
 .cardCol a :hover {
   color: black;
 }
+.heartButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
 
 /*
 İLK DENEMELER

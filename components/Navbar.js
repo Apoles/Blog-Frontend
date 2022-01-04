@@ -1,18 +1,10 @@
 import React from "react";
-import {
-  Nav,
-  Navbar,
-  Container,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import styles from "../styles/navbar.module.css";
 import { FaTwitter, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import Link from "next/link";
 
-export const Navbars = () => {
+const Navbars = () => {
   const index = 0;
   return (
     <div>
@@ -33,15 +25,6 @@ export const Navbars = () => {
                 <Nav.Link href="#action2">İletişim</Nav.Link>
                 <Nav.Link href="#action3">Hakkimda</Nav.Link>
               </Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
             </Navbar.Collapse>
           </Container>
         </Navbar>
@@ -82,6 +65,8 @@ export const Navbars = () => {
     </div>
   );
 };
+
+export default Navbars;
 
 /*
 <hr style={{ width: "100%" }}></hr>

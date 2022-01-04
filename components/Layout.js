@@ -5,6 +5,7 @@ import { Footer } from "./Footer.js";
 import { Hakkimda, NavbarTwo } from "./Hakkimda.js";
 
 import { FaBars, FaTimes } from "react-icons/fa";
+import BoostNavbar from "./BoostNavbar.js";
 const value = true;
 
 const Layout = ({ children }) => {
@@ -12,9 +13,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className={styles.layoutMainDiv}>
+        <BoostNavbar></BoostNavbar>
         <div className={styles.middle}>
-          <Navbars></Navbars>
-
           <main className={styles.main}>{children}</main>
         </div>
         )

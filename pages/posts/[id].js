@@ -5,8 +5,23 @@ import Image from "next/image";
 
 import Gist from "react-gist";
 import resimTwo from "../../public/resimTwo.png";
+import { CommentProfile } from "../../components/CommentProfile";
+import { useState, useEffect } from "react";
 
 const Posts = ({ post }) => {
+  const [data, setdata] = useState([]);
+
+  async function getComment() {
+    await axios.get("http://localhost:5000/comment").then((e) => {
+      console.log(e.data);
+      setdata(e.data);
+    });
+  }
+
+  useEffect(() => {
+    getComment();
+  }, []);
+
   console.log("===ASDASDASDAS>", post);
 
   return (
@@ -35,6 +50,31 @@ const Posts = ({ post }) => {
           <Gist id="dec57a814571ba5c6d58a9493fe18e37"></Gist>
         </div>
       </div>
+
+      {data.map((val, index) => {
+        return (
+          <div key={index}>
+            {" "}
+            <CommentProfile
+              userName={val.userName}
+              email={val.email}
+              comment={val.comment}
+            ></CommentProfile>
+            <br></br>
+            <br></br>
+          </div>
+        );
+      })}
+
+      <form className="ui reply form">
+        <div className="field">
+          <textarea></textarea>
+          <textarea></textarea>
+        </div>
+        <div className="ui blue labeled submit icon button">
+          <i className="icon edit" onClick={() => {}}></i> Add Reply
+        </div>
+      </form>
     </div>
   );
 };
@@ -60,3 +100,15 @@ export const getServerSideProps = async (context) => {
 };
 
 export default Posts;
+
+/*
+   onClick={() => {
+          axios.post("http://localhost:5000/comment", {
+            blogId: post[1]._id,
+            email: "Apoles@gmail.com",
+            userName: "Apolessss",
+            comment: "Bidaha yazma o köylü nineni .....",
+            date: Date.now(),
+          });
+        }}
+*/

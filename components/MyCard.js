@@ -16,6 +16,11 @@ import { Card, Button } from "react-bootstrap";
 import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export const MyCard = (params) => {
+  useEffect(() => {
+    () => {};
+  }, [params.like]);
+
+  console.log(params.id);
   return (
     <div className={styles.mainMyCardDiv}>
       <div className={styles.imageDiv}>
@@ -38,20 +43,27 @@ export const MyCard = (params) => {
         <Divider className={styles.zz} horizontal>
           <ul>
             <li>
-              <div>
+              <div className={styles.heartButton}>
                 {" "}
                 <FontAwesomeIcon
                   color="red"
                   style={{ marginRight: "4px" }}
-                  onClick={() => {
-                    console.log("bastın" + params.id);
+                  onClick={async () => {
+                    await axios
+                      .get(`http://localhost:5000/blog/like/${params.id}`, {})
+                      .then((data) => {
+                        console.log(data.status);
+                      });
+                    console.log("bastın");
 
                     //
                   }}
                   icon={faHeart}
                 ></FontAwesomeIcon>
+                <p>{params.like}</p>
               </div>
             </li>
+
             <li>
               <FacebookShareButton url="http://localhost:3000/">
                 <FaFacebook color="blue"></FaFacebook>
