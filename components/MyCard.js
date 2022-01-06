@@ -17,7 +17,7 @@ import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export const MyCard = (params) => {
   const url =
-    "https://blogapoles.herokuapp.com/blog/like" ||
+    "https://blogapoles.herokuapp.com/blog/like/" ||
     "http://localhost:5000/blog/like/";
   useEffect(() => {
     () => {};

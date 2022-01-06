@@ -9,6 +9,10 @@ import { CommentProfile } from "../../components/CommentProfile";
 import { useState, useEffect } from "react";
 
 const Posts = ({ post }) => {
+  const url =
+    "https://blogapoles.herokuapp.com/comment/" ||
+    "http://localhost:5000/comment/";
+
   const [data, setdata] = useState([]);
 
   async function getComment() {
@@ -80,14 +84,19 @@ const Posts = ({ post }) => {
 };
 
 export const getServerSideProps = async (context) => {
+  const url =
+    "https://blogapoles.herokuapp.com/blog/" || "http://localhost:5000/blog/";
   /* const res = await axios.get(
     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
   );*/
-  const result = await axios.get("http://localhost:5000/blog/", {
-    headers: {
-      id: context.params.id,
-    },
-  });
+  const result = await axios.get(
+    { url },
+    {
+      headers: {
+        id: context.params.id,
+      },
+    }
+  );
 
   console.log(result);
   const post = await result.data;
