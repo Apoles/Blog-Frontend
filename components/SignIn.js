@@ -25,12 +25,15 @@ export const SignIn = () => {
         password: password,
       })
       .then((e) => {
-        console.log(e.data.data.refToken);
         localStorage.setItem("tok", e.data.data.token);
         localStorage.setItem("refTok", e.data.data.refToken);
 
         if (e.status == 200) {
-          console.log(e.data);
+          console.log("=AA==>>AA=SASA=S=AS=AA=S", e.data.data);
+
+          localStorage.setItem("id", e.data.data.id);
+          localStorage.setItem("atName", e.data.data.atName);
+
           Router.push("/");
         }
       })

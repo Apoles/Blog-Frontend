@@ -9,7 +9,6 @@ import BoostNavbar from "./BoostNavbar.js";
 const value = true;
 
 const Layout = ({ children }) => {
-  const [state, setstate] = useState(true);
   return (
     <>
       <div className={styles.layoutMainDiv}>

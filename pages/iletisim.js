@@ -1,14 +1,12 @@
 import React from "react";
 
-export default function iletisim() {
+export default function Iletisim() {
   return (
     <div>
-      <h1>denemeeeeee</h1>
+      <h1>asd</h1>
 
-      <div style={{ background: "red" }} id="iletişim">
-        İletişim SAYFASO
-        <a href="#iletişim">asdasd</a>
-      </div>
+      <button> bas</button>
+      <p> asd </p>
     </div>
   );
 }

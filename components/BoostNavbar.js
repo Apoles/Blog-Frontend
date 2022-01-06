@@ -15,9 +15,8 @@ export default function BoostNavbar() {
 
   async function hasTok() {
     const data = await localStorage.getItem("tok");
-    console.log("=======", data);
+
     if (data) {
-      console.log("girdi ve dödnü");
       setstate(true);
       return true;
     }
@@ -33,7 +32,7 @@ export default function BoostNavbar() {
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Ana Sayfa</Navbar.Brand>
+            <Navbar.Brand href="/">Ana Sayfa</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
@@ -42,8 +41,11 @@ export default function BoostNavbar() {
               </Nav>{" "}
               <Nav>
                 {state ? (
-                  <NavDropdown title="@Apoles_py" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="/">
+                  <NavDropdown
+                    title={localStorage.getItem("atName")}
+                    id="collasible-nav-dropdown"
+                  >
+                    <NavDropdown.Item href="/userProfile">
                       Profil Bilgileri
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/">Hesap Ayarları</NavDropdown.Item>
