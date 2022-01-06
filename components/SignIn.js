@@ -23,13 +23,10 @@ export const SignIn = () => {
 
   function login(email, password) {
     axios
-      .post(
-        { url },
-        {
-          userName: email,
-          password: password,
-        }
-      )
+      .post(url, {
+        userName: email,
+        password: password,
+      })
       .then((e) => {
         localStorage.setItem("tok", e.data.data.token);
         localStorage.setItem("refTok", e.data.data.refToken);
