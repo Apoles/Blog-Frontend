@@ -89,14 +89,11 @@ export const getServerSideProps = async (context) => {
   /* const res = await axios.get(
     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
   );*/
-  const result = await axios.get(
-    { url },
-    {
-      headers: {
-        id: context.params.id,
-      },
-    }
-  );
+  const result = await axios.get(url, {
+    headers: {
+      id: context.params.id,
+    },
+  });
 
   console.log(result);
   const post = await result.data;
