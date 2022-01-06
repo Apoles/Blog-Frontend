@@ -9,6 +9,9 @@ export const SignIn = () => {
   const [email, setEmail] = useState("");
   const [bool, setBool] = useState(false);
   const [password, setPassword] = useState("");
+  const url =
+    "https://blogapoles.herokuapp.com/login/log" ||
+    "http://localhost:5000/blog/login/log";
 
   function validateForm() {
     return email.length > 0 && password.length > 5;
@@ -20,10 +23,13 @@ export const SignIn = () => {
 
   function login(email, password) {
     axios
-      .post("http://localhost:5000/login/log", {
-        userName: email,
-        password: password,
-      })
+      .post(
+        { url },
+        {
+          userName: email,
+          password: password,
+        }
+      )
       .then((e) => {
         localStorage.setItem("tok", e.data.data.token);
         localStorage.setItem("refTok", e.data.data.refToken);

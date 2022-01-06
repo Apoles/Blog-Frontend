@@ -15,6 +15,9 @@ import axios from "axios";
 
 const UserProfile = () => {
   const [state, setstate] = useState();
+  const url =
+    "https://blogapoles.herokuapp.com/login/find" ||
+    "http://localhost:5000/login/find/";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -23,12 +26,7 @@ const UserProfile = () => {
 
       console.log("asdasdasdasdsasd", id);
       axios
-        .get(
-          `http://localhost:5000/login/find/${
-            id || "61d45a9be945f5fe2b9eb2fc"
-          }`,
-          {}
-        )
+        .get(`${url}${id || "61d45a9be945f5fe2b9eb2fc"}`, {})
         .then((data) => {
           const post = data.data;
 

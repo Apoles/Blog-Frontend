@@ -13,9 +13,11 @@ import { Spinner } from "react-bootstrap";
 
 export default function Home() {
   const [data, setdata] = useState("f");
+  const url =
+    "https://blogapoles.herokuapp.com/blog" || "http://localhost:5000/blog/";
 
   useEffect(async () => {
-    await axios.get("http://localhost:5000/blog").then((e) => {
+    await axios.get(url).then((e) => {
       setdata(e.data);
       console.log(e.data);
       console.log("========>", data);

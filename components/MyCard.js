@@ -16,6 +16,9 @@ import { Card, Button } from "react-bootstrap";
 import { FaTwitter, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export const MyCard = (params) => {
+  const url =
+    "https://blogapoles.herokuapp.com/blog/like" ||
+    "http://localhost:5000/blog/like/";
   useEffect(() => {
     () => {};
   }, [params.like]);
@@ -49,11 +52,9 @@ export const MyCard = (params) => {
                   color="red"
                   style={{ marginRight: "4px" }}
                   onClick={async () => {
-                    await axios
-                      .get(`http://localhost:5000/blog/like/${params.id}`, {})
-                      .then((data) => {
-                        console.log(data.status);
-                      });
+                    await axios.get(`${url}${params.id}`, {}).then((data) => {
+                      console.log(data.status);
+                    });
                     console.log("bastın");
 
                     //
