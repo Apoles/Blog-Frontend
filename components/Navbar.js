@@ -11,25 +11,6 @@ const Navbars = () => {
       <div className={styles.navbarsDiv}>
         <h1 className={styles.hbir}>ABDULLAH GÜMÜŞ</h1>
 
-        <Navbar bg="light" expand="lg">
-          <Container fluid>
-            <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <Nav.Link href="/">Ana Sayfa</Nav.Link>
-                <Nav.Link href="#action2">İletişim</Nav.Link>
-                <Nav.Link href="#action3">Hakkimda</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-        <br></br>
-        <br></br>
         <div className={styles.iconDiv}>
           <Link href="/">
             <a>

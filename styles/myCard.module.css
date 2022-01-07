@@ -1,5 +1,5 @@
 .mainMyCardDiv {
-  width: 780px;
+  width: 60vw;
   height: 307px;
   display: flex;
   flex-direction: row;
@@ -9,8 +9,8 @@
   overflow: hidden;
 }
 .mainMyCardDiv img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 190px;
   border-radius: 15px;
   margin-right: 25px;
   overflow: auto;
@@ -91,26 +91,53 @@
 
 @media only screen and (max-width: 890px) {
   .mainMyCardDiv {
-    width: 100%;
-    overflow: hidden;
-    margin: auto;
+    height: max-content;
+    width: auto;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
-
-  .imageDiv {
-    display: none;
+  .mainMyCardDiv img {
+    margin: 0px;
+    padding: 0px;
+    width: 300px;
   }
 }
 
 @media only screen and (max-width: 650px) {
   .mainMyCardDiv {
-    width: 100%;
+    height: max-content;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .imageDiv {
-    display: none;
+  .mainMyCardDiv img {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .cardCol {
+    width: fit-content;
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+  }
+  .cardCol ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-around;
+  }
+  .cardCol ul li {
+    padding-right: 15px;
+  }
+  .liDiv {
+    margin: 0px;
+    padding: 0px;
   }
 }

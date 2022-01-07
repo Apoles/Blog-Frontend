@@ -45,25 +45,27 @@ export const MyCard = (params) => {
         <br></br>
         <Divider className={styles.zz} horizontal>
           <ul>
-            <li>
-              <div className={styles.heartButton}>
-                {" "}
-                <FontAwesomeIcon
-                  color="red"
-                  style={{ marginRight: "4px" }}
-                  onClick={async () => {
-                    await axios.get(`${url}${params.id}`, {}).then((data) => {
-                      console.log(data.status);
-                    });
-                    console.log("bastın");
+            <div className={styles.liDiv}>
+              <li>
+                <div className={styles.heartButton}>
+                  {" "}
+                  <FontAwesomeIcon
+                    color="red"
+                    style={{ marginRight: "4px" }}
+                    onClick={async () => {
+                      await axios.get(`${url}${params.id}`, {}).then((data) => {
+                        console.log(data.status);
+                      });
+                      console.log("bastın");
 
-                    //
-                  }}
-                  icon={faHeart}
-                ></FontAwesomeIcon>
-                <p>{params.like}</p>
-              </div>
-            </li>
+                      //
+                    }}
+                    icon={faHeart}
+                  ></FontAwesomeIcon>
+                  <p>{params.like}</p>
+                </div>
+              </li>
+            </div>
 
             <li>
               <FacebookShareButton url="http://localhost:3000/">

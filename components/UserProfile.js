@@ -12,11 +12,12 @@ import {
 import styles from "../styles/profile.module.css";
 import quenn from "../public/kralice.jpg";
 import axios from "axios";
+import resim from "../public/kralice.jpg";
 
 const UserProfile = () => {
-  const [state, setstate] = useState();
+  const [state, setstate] = useState({});
   const url =
-    "https://blogapoles.herokuapp.com/login/find" ||
+    "https://blogapoles.herokuapp.com/login/find/" ||
     "http://localhost:5000/login/find/";
 
   useEffect(() => {
@@ -30,107 +31,85 @@ const UserProfile = () => {
         .then((data) => {
           const post = data.data;
 
-          setstate(post);
+          setstate(post.data);
         })
 
         .catch((err) => {
+          console.log("errror da error");
           console.log(err);
         });
     }
   }, []);
 
-  console.log(
-    "=====================================================ananananmamammmam",
-    state
-  );
+  console.log(state);
 
   return (
-    <div>
-      <>
-        <Container>
-          <Row className="justify-content-md-center">
-            <Col md="5">
-              <Card>
-                <Card.Body>
-                  <Form>
-                    <Col>
-                      <Col className="px-1" md="9">
-                        <Form.Group>
-                          <label>Username</label>
-                          <br></br>
+    <div className={styles.mainDiv}>
+      <div className={styles.col}>
+        <h1>ACCOUNT</h1>
+        <div className={styles.row}>
+          <div>
+            <Card
+              style={{
+                width: "21rem",
+                padding: "2rem",
+                marginRight: "1rem",
+                borderRadius: "1rem",
+                backgroundColor: "whitesmoke",
+              }}
+            >
+              <Card.Img
+                style={{
+                  height: "50px",
+                  width: "50px",
+                  borderRadius: "2rem",
+                  display: "block",
+                  margin: "0 auto",
+                }}
+                variant="top"
+                src="kralice.jpg"
+              />
+              <Card.Body
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <Card.Title>Aysenur gümüş</Card.Title>
+                <Card.Text>Bursa İnegöl</Card.Text>
+                <Button variant="primary">Upload picture</Button>
+              </Card.Body>
+            </Card>
+          </div>
 
-                          <Form.Control
-                            defaultValue="michael23"
-                            placeholder="Username"
-                            type="text"
-                          ></Form.Control>
-                        </Form.Group>
-                      </Col>
-                      <Col className="px-1" md="9">
-                        <Form.Group>
-                          <br></br>
-                          <br></br>
-                          <label htmlFor="exampleInputEmail1">
-                            Email address
-                          </label>
-
-                          <Form.Control
-                            placeholder="Email"
-                            type="email"
-                          ></Form.Control>
-                        </Form.Group>
-                      </Col>
-                    </Col>
-
-                    <Col>
-                      <Col className="px-1" md="9">
-                        <Form.Group>
-                          <br></br>
-                          <br></br>
-                          <label>First Name</label>
-                          <br></br>
-                          <Form.Control
-                            defaultValue="Mike"
-                            placeholder="Company"
-                            type="text"
-                          ></Form.Control>
-                        </Form.Group>
-                      </Col>
-                      <Col className="px-1" md="9">
-                        <Form.Group>
-                          <br></br>
-                          <br></br>
-                          <label>Last Name</label>
-                          <br></br>
-
-                          <Form.Control
-                            defaultValue="Andrew"
-                            placeholder="Last Name"
-                            type="text"
-                          ></Form.Control>
-                        </Form.Group>
-                      </Col>
-                    </Col>
-                  </Form>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md="5">
-              <Card>
-                <Card.Img
-                  style={{ height: "290px" }}
-                  variant="top"
-                  src="kralice.jpg"
-                />
-                <Card.Body>
-                  <Card.Text>Allllllllll hyeter la yeter aqqqclea</Card.Text>
-                </Card.Body>
-              </Card>
-              <br />
-            </Col>
-          </Row>
-        </Container>
-      </>
+          <div className={styles.colProfileInfo}>
+            <h1>Profile</h1>
+            <p>The information can be edited</p>
+            <br></br>
+            <hr></hr>
+            <Form>
+              <Row>
+                <Col>
+                  <Form.Control placeholder="First name" />
+                </Col>
+                <Col>
+                  <Form.Control placeholder="Last name" />
+                </Col>
+              </Row>
+            </Form>
+            <br></br>
+            <Form>
+              <Row>
+                <Col>
+                  <Form.Control placeholder="First name" />
+                </Col>
+                <Col>
+                  <Form.Control placeholder="Last name" />
+                </Col>
+              </Row>
+            </Form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

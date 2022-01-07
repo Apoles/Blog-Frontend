@@ -5,7 +5,7 @@ import styles from "../styles/homeIndex.module.css";
 import Navbars from "../components/Navbar.js";
 import hakkimda from "../public/hakkımda.jpeg";
 import blogone from "../public/blogone.jpg";
-import resim from "../public/resimOne.jpg";
+import resim from "../public/kralice.jpg";
 import Image from "next/image";
 import blogs from "../blogs.js";
 import axios from "axios";
@@ -57,7 +57,13 @@ export default function Home() {
             })
           )}
         </div>
-        <div className={styles.hakkimizda}>
+      </div>
+    </div>
+  );
+}
+
+/*
+  <div className={styles.hakkimizda}>
           <h1>Hakkımda</h1>
           <div className={styles.hakkimdaImg}>
             <div className={styles.imgs}>
@@ -72,7 +78,4 @@ export default function Home() {
             la alakalı yazı atarım o kadar
           </p>
         </div>
-      </div>
-    </div>
-  );
-}
+*/
